@@ -1,6 +1,6 @@
 import { cva, type VariantProps } from "class-variance-authority"
 
-import { twMerge } from "tailwind-merge"
+import cn from "components/ui/cn"
 
 const button = cva(
   [
@@ -12,7 +12,7 @@ const button = cva(
     "border",
     "border-blue-400",
     "transition-colors",
-    "delay-50"
+    "delay-50",
   ],
   {
     variants: {
@@ -40,7 +40,7 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLAnchorElemen
 
 export function Button({ className, intent, size, underline, ...props }: ButtonProps) {
   return (
-    <a className={twMerge(button({ intent, size, className, underline }))} {...props}>
+    <a className={cn(button({ intent, size, className, underline }))} {...props}>
       {props.children}
     </a>
   )
