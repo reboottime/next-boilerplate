@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
 }
 
-export default function Web() {
+export default function HomePage() {
   return (
     <>
       <section className="bg-white dark:bg-gray-900">
