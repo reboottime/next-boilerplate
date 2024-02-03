@@ -1,3 +1,3 @@
-import RootLayout from "components/page-layout"
+import RootLayout from 'components/page-layout';
 
-export default RootLayout
+export default RootLayout;

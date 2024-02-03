@@ -1,45 +1,45 @@
-import * as RadixTooltip from "@radix-ui/react-tooltip"
-import { cva, VariantProps } from "class-variance-authority"
-import React from "react"
+import * as RadixTooltip from '@radix-ui/react-tooltip';
+import { cva, VariantProps } from 'class-variance-authority';
+import React from 'react';
 
-import cn from "components/ui/cn"
+import cn from 'components/ui/cn';
 
 const tooltipContent = cva([], {
   variants: {
     intent: {
-      primary: ["rounded-0.5md", "bg-zinc-700", "font-open-sans", "text-white"],
+      primary: ['rounded-0.5md', 'bg-zinc-700', 'font-open-sans', 'text-white'],
     },
     size: {
-      md: ["px-4", "py-2.5", "text-2xs"],
+      md: ['px-4', 'py-2.5', 'text-2xs'],
     },
   },
   defaultVariants: {
-    intent: "primary",
-    size: "md",
+    intent: 'primary',
+    size: 'md',
   },
-})
+});
 
 const tooltipArrow = cva([], {
   variants: {
     intent: {
-      primary: ["fill-zinc-700"],
+      primary: ['fill-zinc-700'],
     },
     size: {
-      md: ["w-4", "h-2"],
+      md: ['w-4', 'h-2'],
     },
   },
   defaultVariants: {
-    intent: "primary",
-    size: "md",
+    intent: 'primary',
+    size: 'md',
   },
-})
+});
 
 export interface TooltipProps extends VariantProps<typeof tooltipContent>, RadixTooltip.TooltipProps {
-  explainer: React.ReactElement | string
   children: React.ReactElement
   className?: string
+  explainer: React.ReactElement | string
+  side?: 'top' | 'right' | 'bottom' | 'left'
   withArrow?: boolean
-  side?: "top" | "right" | "bottom" | "left"
 }
 
 export function Tooltip({
@@ -50,7 +50,7 @@ export function Tooltip({
   onOpenChange,
   intent,
   size,
-  side = "top",
+  side = 'top',
   className,
   withArrow,
 }: TooltipProps) {
@@ -59,16 +59,14 @@ export function Tooltip({
       <RadixTooltip.Root open={open} defaultOpen={defaultOpen} onOpenChange={onOpenChange} delayDuration={200}>
         <RadixTooltip.Trigger asChild>{children}</RadixTooltip.Trigger>
         <RadixTooltip.Portal>
-          <RadixTooltip.Content
-            side={side}
-            sideOffset={5}
-            className={cn(tooltipContent({ intent, size, className }))}
-          >
+          <RadixTooltip.Content side={side} sideOffset={5} className={cn(tooltipContent({ intent, size, className }))}>
             {explainer}
-            {withArrow ? <RadixTooltip.Arrow className={cn(tooltipArrow({ intent, size, className }))} /> : null}
+            {withArrow
+              ? <RadixTooltip.Arrow className={cn(tooltipArrow({ intent, size, className }))} />
+              : null}
           </RadixTooltip.Content>
         </RadixTooltip.Portal>
       </RadixTooltip.Root>
     </RadixTooltip.Provider>
-  )
+  );
 }

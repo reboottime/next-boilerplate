@@ -1,23 +1,24 @@
-import { Metadata } from "next"
-import { LP_GRID_ITEMS } from "lp-items"
-import Button from "components/ui/Button"
+import { Metadata } from 'next';
+
+import Button from 'components/ui/Button';
+import { LP_GRID_ITEMS } from 'lp-items';
 
 export const metadata: Metadata = {
-  title: "Next.js Enterprise Boilerplate",
+  title: 'Next.js Enterprise Boilerplate',
   twitter: {
-    card: "summary_large_image",
+    card: 'summary_large_image',
   },
   openGraph: {
-    url: "https://next-enterprise.vercel.app/",
+    url: 'https://next-enterprise.vercel.app/',
     images: [
       {
         width: 1200,
         height: 630,
-        url: "https://raw.githubusercontent.com/Blazity/next-enterprise/main/project-logo.png",
+        url: 'https://raw.githubusercontent.com/Blazity/next-enterprise/main/project-logo.png',
       },
     ],
   },
-}
+};
 
 export default function HomePage() {
   return (
@@ -61,5 +62,5 @@ export default function HomePage() {
         </div>
       </section>
     </>
-  )
+  );
 }

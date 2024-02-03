@@ -1,5 +1,5 @@
-import Head from "next/head"
-import "styles/global.css"
+import Head from 'next/head';
+import 'styles/global.css';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -14,13 +14,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <PageFooter />
       </body>
     </html>
-  )
+  );
 }
 
 const PageHeader = () => {
-  return <header></header>
-}
+  return <header></header>;
+};
 
 const PageFooter = () => {
-  return <footer></footer>
-}
+  return <footer></footer>;
+};
