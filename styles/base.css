@@ -1,0 +1,30 @@
+@tailwind base;
+
+@layer base {
+  [role="button"]:hover {
+    opacity: 0.9;
+    cursor: pointer;
+  }
+  button:hover {
+    opacity: 0.9;
+    cursor: pointer;
+  }
+  .button {
+    cursor: pointer;
+  }
+
+  [disabled] {
+    cursor: not-allowed;
+  }
+  [disabled]:hover {
+    opacity: initial;
+  }
+
+  iframe {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+}

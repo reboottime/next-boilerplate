@@ -1,0 +1,5 @@
+@tailwind utilities;
+
+/** Define your utilities here, idealy seperate by group **/
+/* Differentiate with component directive, you can apply a utility to your custom code  */
+@layer utilities {}
